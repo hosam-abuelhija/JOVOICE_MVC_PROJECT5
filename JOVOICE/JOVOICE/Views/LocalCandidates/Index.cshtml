@@ -1,0 +1,76 @@
+﻿@model IEnumerable<JOVOICE.Models.LocalCandidate>
+
+@{
+    ViewBag.Title = "Local Candidates";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<h2>Local Candidates</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            National ID
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            List Name
+        </th>
+        <th>
+            Type of Chair
+        </th>
+        <th>
+            Gender
+        </th>
+        <th>
+            Birthdate
+        </th>
+        <th>
+            Religion
+        </th>
+        <th>
+            Election Area
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.national_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.listname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.type_of_chair)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.birthdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.religion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.electionarea)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>*@
+    </tr>
+}
+
+</table>

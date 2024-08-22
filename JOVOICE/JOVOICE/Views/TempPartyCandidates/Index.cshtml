@@ -1,0 +1,89 @@
+﻿@model IEnumerable<JOVOICE.Models.TempPartyCandidate>
+
+@{
+    ViewBag.Title = "Party Lists Applications";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+    <h2>Party Lists Applications</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+<form method="post">
+    <table class="table">
+        <tr>
+            <th>
+                National ID
+            </th>
+            <th>
+                Candidate Name
+            </th>
+            <th>
+                Election Area
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                List Name
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Birthdate
+            </th>
+            <th>
+                Religion
+            </th>
+            <th>
+               Order
+            </th>
+
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.national_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.candidatename)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.electionarea)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.partyname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.birthdate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.religion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ordercandidate)
+                </td>
+
+
+                <td>
+                    <button type="submit" name="approvedCandidateId" value="@item.id" class="btn btn-primary"> Accept </button>
+                    @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-secondary" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </form>

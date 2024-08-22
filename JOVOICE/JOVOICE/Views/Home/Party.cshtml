@@ -1,0 +1,83 @@
+﻿@model List<JOVOICE.Models.PartyList>
+@{
+    ViewBag.Title = "Party";
+    Layout = "~/Views/Shared/_LayoutPageUserlogged.cshtml";
+}
+
+<style>
+    input[type="radio"] {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+</style>
+
+@using (Html.BeginForm("Party", "Home", FormMethod.Post, new { id = "partyForm" }))
+{
+    <div class="container-fluid training overflow-hidden bg-light py-5">
+        <div class="container py-5">
+            <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="sub-style">
+                    <h5 class="sub-title text-primary px-3">القوائم الحزبيّة</h5>
+                </div>
+                <h1 class="display-5 mb-4">القوائم الحزبيّة المترشحة لانتخابات 2024</h1>
+                <p class="mb-0">اختر القائمة التي تريد التصويت لها</p>
+            </div>
+            <div class="row g-4">
+                @foreach (var party in Model)
+                {
+                    <div class="col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="training-item">
+                            <div class="training-inner">
+                                <img src="~/Content/img/electionImages/logoElection.png" class="img-fluid w-100 rounded" alt="Image" />
+                                <div class="training-title-name">
+                                    <a href="#" class="h4 text-white mb-0">@party.listname</a>
+                                </div>
+                            </div>
+                            <div class="training-content bg-secondary rounded-bottom p-4">
+                                <label>
+                                    <h4 class="text-white">
+                                        <input type="radio" name="party" value="@party.listname" id="party2">
+                                        @party.listname
+                                    </h4>
+                                </label>
+                                <p class="text-white-50">"مصلحة الوطن والمواطن أولاً"</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!-- Repeat similar structure for other parties -->
+            </div>
+        </div>
+        <div class="col-12 text-center">
+            <input type="submit" value="تأكيد" class="btn btn-primary border-secondary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.1s" id="confirmActionLink" />
+        </div>
+    </div>
+}
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("confirmActionLink").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the default button action
+            displayAlert();
+        });
+    });
+
+    function displayAlert() {
+        Swal.fire({
+            title: "هل أنت متأكد من إنهاء عملية التصويت",
+            showDenyButton: true,
+            showCancelButton: false,
+            confirmButtonText: "تأكيد",
+            denyButtonText: "الغاء"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById("partyForm").submit();
+            } else if (result.isDenied) {
+                Swal.close();
+            }
+        });
+    }
+</script>

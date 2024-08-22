@@ -1,0 +1,508 @@
+﻿@{
+    ViewBag.Title = "نسب التصويت";
+    Layout = "~/Views/Shared/_LayoutPageUserlogged.cshtml";
+}
+
+
+<main>
+
+    <!-- Counter Facts Start -->
+
+    <div class=" resultsContainer wow fadeInRight" data-wow-delay="0.3s">
+        <div class="resultsPageTitleContainer">
+
+            <h5 class="sub-title pe-3 resultsPageTitle">نسب الاقتراع للقوائم الحزبية و المحلية</h5>
+        </div>
+
+    </div>
+    <br /><br />
+    <div class=" resultsContainer wow fadeInRight" data-wow-delay="0.3s">
+        <h5>
+            لمعرفة أسماء الفائزين
+            @*<br />*@
+            انقر على اسم الدائرة
+        </h5>
+
+    </div>
+    <br /><br />
+
+    <div class=" resultsContainer wow fadeInRight" data-wow-delay="0.3s">
+
+        <div class="col-12 btnCon resultsBtnCon">
+            <a class="btn btn-primary border-secondary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.1s" href="~/ResultsDetails.xlsx">
+                تحميل النتائج النهائية للأصوات
+            </a>
+        </div>
+
+
+    </div>
+
+    <div class="container-fluid counter-facts py-5">
+        <div class="container py-5">
+
+            <div class="row g-4 resultsCardsContainer">
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.7s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("partyResults", "Results")" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>القوائم الحزبية</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">
+                                        @TempData["partyPercent"]
+                                    </span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container-fluid counter-facts py-5">
+        <div class="container py-5">
+            <div class="row g-4 resultsCardsContainer">
+
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.1s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("staticResults", "Results")" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>العاصمة الاولى</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">79</span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.3s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("staticResults", "Results")" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>العاصمة الثانية</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">83</span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.5s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("staticResults", "Results")" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>العاصمة الثالثة</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">81</span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.3s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("detailedResults", "Results", new { id = "اربد الاولى" })" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>اربد الاولى</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">
+                                        @TempData["localPercentIrbid1"]
+                                    </span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.7s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("detailedResults", "Results", new { id = "اربد الثانية" })" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>اربد الثانية</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">
+                                        @TempData["localPercentIrbid2"]
+                                    </span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.7s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("staticResults", "Results")" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>البلقاء</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">87</span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.7s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("staticResults", "Results")" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>الكرك</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">85</span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.7s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("staticResults", "Results")" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>معان</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">84</span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.7s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("staticResults", "Results")" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>الزرقاء</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">90</span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.7s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("detailedResults", "Results", new { id = "المفرق" })" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>المفرق</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">
+                                        @TempData["localPercentMafraq"]
+                                    </span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.7s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("staticResults", "Results")" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>الطفيلة</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">81</span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.7s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("staticResults", "Results")" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>مأدبا</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">83</span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.7s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("staticResults", "Results")" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>جرش</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">80</span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.7s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("staticResults", "Results")" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>عجلون</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">81</span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.7s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("staticResults", "Results")" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>العقية</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">78</span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.7s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("staticResults", "Results")" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>بدو الشمال</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">79</span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.7s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("staticResults", "Results")" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>بدو الوسط</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">83</span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-6 col-xl-3 wow fadeInUp resultsCardBody" data-wow-delay="0.7s">
+                    <div class="counter resultsCounter">
+                        <a href="@Url.Action("staticResults", "Results")" style="text-decoration: none;">
+                            <div class="counter-icon">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </div>
+                            <div class="counter-content">
+                                <h3>بدو الجنوب</h3>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="counter-value" data-toggle="counter-up">77</span>
+                                    <h4 class="text-secondary mb-0" style="font-weight: 600; font-size: 25px;">%</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <!-- Counter Facts End -->
+
+
+
+
+
+</main>
+
+
+@section stylesheet {
+    <style>
+
+        main {
+            direction: rtl;
+        }
+
+        .resultsCardsContainer {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .resultsCardBody {
+            margin: 2em 0;
+        }
+
+        .resultsPageTitleContainer {
+            position: relative;
+            display: inline-block;
+            text-transform: uppercase;
+            color: var(--bs-primary);
+        }
+
+            .resultsPageTitleContainer::before {
+                content: "";
+                width: 100px;
+                position: absolute;
+                bottom: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                margin-bottom: -6px;
+                margin-left: -100px;
+                border: 1px solid var(--bs-secondary);
+            }
+
+            .resultsPageTitleContainer::after {
+                content: "";
+                width: 50px;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                margin-top: -8px;
+                margin-left: -50px;
+                border: 1px solid var(--bs-primary) !important;
+            }
+
+        .resultsPageTitle {
+            font-size: 3em !important;
+            color: black !important;
+        }
+
+        .resultsContainer {
+            display: flex !important;
+            justify-content: center !important;
+            width: 100% !important;
+        }
+
+
+        .resultsBtnCon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5em;
+        }
+
+
+        @@media only screen and (max-width: 426px) {
+            .resultsPageTitleContainer::after, .resultsPageTitleContainer::before, .resultsPageTitle::after, .resultsPageTitle::before {
+                display: none !important;
+            }
+
+            .resultsPageTitle {
+                text-align: center !important;
+            }
+        }
+    </style>
+}
+
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            // Initiate the wowjs
+            new WOW().init();
+
+            // Facts counter
+            $('[data-toggle="counter-up"]').counterUp({
+                delay: 3,
+                time: 1000
+            });
+        });
+    </script>
+}
+

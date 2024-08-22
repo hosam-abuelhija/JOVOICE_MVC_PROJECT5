@@ -1,0 +1,81 @@
+﻿@model IEnumerable<JOVOICE.Models.Debate>
+
+@{
+    ViewBag.Title = "Debates";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<div style="display:flex; justify-content: space-between; margin-bottom:20px;">
+    <div>
+        <h2>Debates</h2>
+
+        @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+    </div>
+    <div>
+        <a href="@Url.Action("Index", "TempDebates")" class="btn btn-lg btn-primary m-2">Debates Applications</a>
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            List Name
+        </th>
+        <th>
+            Election Area
+        </th>
+        <th>
+            Time
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Phone No.
+        </th>
+        <th>
+           Candidate Name
+        </th>
+
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.listname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.areaelection)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <th>
+            @Html.DisplayFor(modelItem => item.email)
+        </th>
+        <th>
+            @Html.DisplayFor(modelItem => item.phoneNo)
+        </th>
+        <th>
+            @Html.DisplayFor(modelItem => item.candidateName)
+        </th>
+
+
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+        </td>*@
+    </tr>
+}
+
+</table>
